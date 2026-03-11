@@ -33,7 +33,7 @@ public class App {
         App app = new App();
         
         // 1. Ambil nama dari argumen (jika ada), jika tidak pakai Default
-        String name = (args.length > 0) ? args[0] : "Guest";
+        String name = (args.length > 0) ? args[0] : "user";
         
         // 2. Cetak Header yang informatif
         System.out.println("========================================");
