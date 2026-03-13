@@ -16,12 +16,16 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('Manual Approval') {
             steps {
                 script {
                     // Pipeline akan berhenti di sini menunggu klik "Proceed" atau "Abort"
                     input message: 'Lanjutkan ke tahap Deploy?', ok: 'Proceed'
                 }
+            }
+        }
+        stage('Deploy') {
+            steps {
                 sh './jenkins/scripts/deliver.sh'
             }
         }
